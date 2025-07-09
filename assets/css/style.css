@@ -15,7 +15,7 @@
 
 html {
     scroll-behavior: smooth;
-    font-family: "Huninn", sans-serif;
+    font-family: "Kanit", sans-serif;
 }
 
 :root {
@@ -99,8 +99,6 @@ html {
     position: relative;
 }
 
-
-
 #nav > li > a {
     color: #fff;
     text-transform: uppercase;
@@ -183,6 +181,7 @@ html {
     background: var(--primary-color);
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 
@@ -207,8 +206,22 @@ html {
     text-shadow: 0 0 1px #000;
 } */
 
+.slider-img-wrapper {
+    width: 100%;
+}
+
 .slider-img {
     width: 100%;
+    height: 750px;
+}
+.width-large {
+    width: 1440px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 64px 0;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 #content .content-section {
@@ -221,25 +234,26 @@ html {
     padding-right: 16px;
 }
 
-
 #content .heading-content {
     text-align: center;
-    font-size: 30px;
+    font-size: 3rem;
+    font-family: url('/assets/fonts/EXSH_font/TF-MBF-Space-Habitat-fseuoe.ttf') format('truetype');
 }
 
 #content .sub-heading-content {
     text-align: center;
     font-style: italic;
     opacity: 0.6;
-    font-size: 15px;
+    font-size: 2rem;
     margin-top: 15px;
 }
 
 #content .content-description {
-    font-size: 15px;
-    line-height: 1.6;
+    font-size: 1.6rem;
+    line-height: 1.4;
     margin-top: 15px;
     text-align: justify;
+    font-weight: 300;
 }
 
 #content .team-wrap {
@@ -248,8 +262,14 @@ html {
 
 #content .member-item {
     float: left;
-    width: calc(100%/3);
+    width: calc(100%/6);
     text-align: center;
+    transition: ease-in 0.2s;
+}
+
+#content .member-item:hover {
+    transition: ease-in 0.2s;
+    transform: translateY(-3px);
 }
 
 #content .member-name {
@@ -257,10 +277,117 @@ html {
 }
 
 #content .member-img {
-    width: 154px;
+    width: 200px;
     margin-top: 15px;
     border-radius: 4px;
 }
+
+#ticket {
+    display: flex;
+    justify-content: center;
+    padding: 60px 0;
+}
+
+.ticket-wrapper {
+    display: flex;
+    justify-content: space-between;
+    background-color: #000;
+    color: #fff;
+    width: 1024px;
+    padding: 32px 32px 20px 48px;
+    border-left: 32px dotted #fff;
+    border-right: 32px dotted #fff;
+    border-radius: 1px;
+
+}
+
+.ticket-left {
+    width: 75%;
+    padding-right: 38px;
+    border-right: 4px dashed #fff;
+}
+
+.ticket-left-time {
+    display: flex;
+    line-height: 1;
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.time-numb {
+    font-size: 4rem;
+    font-weight: 500;
+}
+
+.time-title {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+.two-points {
+    font-size: 4rem;
+    font-weight: 500;
+    margin: 0 36px;
+}
+
+.ticket-left-mid {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 0;
+}
+
+.ticket-left-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 3rem;
+}
+
+.date {
+    display: flex;
+    align-items: end;
+}
+
+.time-ticket {
+    display: flex;
+    text-align: start;
+    margin-right: 8px;
+    height: 100%;
+}
+
+.time-ticket-des {
+    display: flex;
+    align-items: center;
+
+}
+
+.ticket-left-bot {
+    line-height: 0.9;
+}
+
+.ticket-left-bot-des {
+    font-size: 6rem;
+    font-weight: 800;
+    background: var(--primary-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.ticket-right {
+    display: flex;
+    margin-left: 20px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.ticket-right-img {
+    width: 340px;
+}
+
 
 .tour-section {
     background-color: #000;
@@ -291,12 +418,9 @@ html {
     margin-left: 12px;
 }
 
-
 .all-tickets {
     display: inline-block;
-   
 }
-
 
 .date-booking .quantity {
     float: right;
