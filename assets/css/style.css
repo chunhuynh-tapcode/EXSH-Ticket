@@ -184,35 +184,12 @@ html {
     align-items: center;
 }
 
-
-/* #slider .text-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #000;
-    text-align: center;
-}
-
-
-#slider .heading-text{
-    font-weight: 500;
-    font-size: 50px
-}
-
-
-#slider .text-description{
-    font-size: 15px;
-    margin-top: 12px;
-    text-shadow: 0 0 1px #000;
-} */
-
 .slider-img-wrapper {
     width: 100%;
 }
 
 .slider-img {
     width: 100%;
-    height: 750px;
 }
 .width-large {
     width: 1440px;
@@ -256,8 +233,20 @@ html {
     font-weight: 300;
 }
 
+.content-description-p {
+    margin-bottom: 20px;
+}
+
+.content-li {
+    margin-left: 60px;
+}
+
 #content .team-wrap {
     margin-top: 48px;
+}
+
+#content .margin-bottom {
+    margin-bottom: 48px
 }
 
 #content .member-item {
@@ -285,7 +274,7 @@ html {
 #ticket {
     display: flex;
     justify-content: center;
-    padding: 60px 0;
+
 }
 
 .ticket-wrapper {
@@ -295,10 +284,16 @@ html {
     color: #fff;
     width: 1024px;
     padding: 32px 32px 20px 48px;
-    border-left: 32px dotted #fff;
-    border-right: 32px dotted #fff;
-    border-radius: 1px;
-
+    clip-path: polygon(
+    30px 0%,  /* trên bên trái */
+    calc(100% - 30px) 0%,
+    100% 30px,
+    100% calc(100% - 30px),
+    calc(100% - 30px) 100%,
+    30px 100%,
+    0% calc(100% - 30px),
+    0% 30px
+  );
 }
 
 .ticket-left {
@@ -379,18 +374,18 @@ html {
 
 .ticket-right {
     display: flex;
+    flex-direction: column;
     margin-left: 20px;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: space-evenly;
 }
 
 .ticket-right-img {
     width: 340px;
 }
 
-
 .tour-section {
-    background-color: #000;
+    background: var(--primary-color);
 }
 
 
@@ -398,7 +393,6 @@ html {
     background-color: #fff;
     margin-top: 40px;
 }
-
 
 .date-booking li {
     font-size: 15px;
@@ -408,9 +402,8 @@ html {
     list-style: none;
 }
 
-
 .date-booking .sold-out {
-    background-color: orangered;
+    background-color: rgb(243, 36, 36);
     padding: 5px 10px;
     margin-left: 4px;
     color: #fff;
@@ -460,14 +453,13 @@ html {
 }
 
 .place-name {
-    font-weight: 550;
+    font-weight: 400;
     margin-top: 15px;
 }
 
 .time-ticket {
     opacity: 0.6;
     margin-top: 15px;
-
 }
 
 .description-ticket {
@@ -477,7 +469,7 @@ html {
 
 .place-buy-btn {
     padding: 11px 16px;
-    background-color: black;
+    background: var(--primary-color);
     color: white;
     text-decoration: none;
     display: inline-block;
@@ -487,8 +479,16 @@ html {
 }
 
 .place-buy-btn:hover {
-    background-color: #ccc;
-    color: black;
+    opacity: 0.7;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.3;
+}
+
+button:disabled:hover {
+    color: #fff;
 }
 
 .contact-content{
@@ -572,13 +572,11 @@ html {
     margin-right: 16px;
 }
 
-.map-section img {
-    width: 100%;
-}
-
 #footer {
     padding: 64px 16px;
     text-align: center;
+    background: var(--primary-color);
+    color: #fff;
 }
 
 #footer .icon-social {
@@ -610,6 +608,7 @@ html {
     padding: 12px;
     font-weight: 500;
     cursor: pointer;
+    z-index: 1;
 }
 
 .modal-close:hover {
@@ -617,27 +616,9 @@ html {
     color: black;
 }
 
-.modal-body {
-    padding: 16px;
-}
-
-.modal-label {
-    display: block;
-    font-size: 15px;
-    margin-bottom: 12px;
-}
-
-.modal-input {
-    font-size: 15px;
-    padding: 10px;
-    width: 100%;
-    border: 1px solid #ccc;
-    margin-bottom: 20px;
-}
-
 .buy-ticket {
-    width: 100%;
-    background-color: #009688;
+    width: 50%;
+    background: var(--primary-color);
     text-align: center;
     cursor: pointer;
     padding: 16px;
@@ -647,17 +628,7 @@ html {
 }
 
 .buy-ticket:hover {
-    background-color: #ccc;
-    color: black;
-}
-
-.modal-footer {
-    padding: 16px;
-    text-align: right;
-}
-
-.modal-footer a {
-    color: blue;
+    opacity: 0.7;
 }
 
 @keyframes modalFadeIn {
@@ -679,4 +650,3 @@ html {
     display: flex;
     margin-bottom: 6px;
 }
-
